@@ -1,0 +1,243 @@
+/* Light Theme Variables */
+:root {
+	--bg-color: #f4f4f9;
+	--text-color: #333;
+	--border-color: #ddd;
+	--button-bg: #007bff;
+	--button-hover: #0056b3;
+	--input-bg: #fff;
+}
+
+/* Dark Theme Variables */
+.dark-theme {
+	--bg-color: #1e1e2f;
+	--text-color: #eee;
+	--border-color: #444;
+	--button-bg: #4e78ff;
+	--button-hover: #3a62cc;
+	--input-bg: #2a2a3d;
+}
+
+/* Body Style */
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	width: 400px;
+	height: 500px;
+}
+
+/* Popup Container */
+.popup-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+	gap: 15px;
+}
+
+/* Header */
+h1 {
+	font-size: 22px;
+	color: var(--text-color);
+	margin-bottom: 10px;
+}
+
+/* Toggle Button */
+.toggle-btn {
+	padding: 10px 20px;
+	background-color: var(--button-bg);
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+	background-color: var(--button-hover);
+}
+
+/* Block List */
+.block-list {
+	width: 100%;
+	flex-grow: 1;
+	overflow-y: auto;
+	border: 1px solid var(--border-color);
+	border-radius: 5px;
+	padding: 10px;
+	background-color: var(--input-bg);
+}
+
+.block-list ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.block-list li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px 10px;
+	border-bottom: 1px solid var(--border-color);
+	color: var(--text-color);
+}
+
+.block-list li:last-child {
+	border-bottom: none;
+}
+
+.block-list button {
+	padding: 5px 10px;
+	font-size: 14px;
+	background-color: #dc3545;
+	color: #fff;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.block-list button:hover {
+	background-color: #c82333;
+}
+
+/* Scrollbar for Block List */
+.block-list {
+	scrollbar-width: thin;
+	scrollbar-color: var(--border-color) transparent;
+}
+
+.block-list::-webkit-scrollbar {
+	width: 8px;
+}
+
+.block-list::-webkit-scrollbar-thumb {
+	background-color: var(--border-color);
+	border-radius: 10px;
+}
+
+/* Add Site Section */
+.add-site {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	width: 100%;
+}
+
+.input-container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+}
+
+.input-field {
+	flex-grow: 1;
+	padding: 10px;
+	font-size: 14px;
+	background-color: var(--input-bg);
+	color: var(--text-color);
+	border: 1px solid var(--border-color);
+	border-radius: 5px;
+	outline: none;
+}
+
+.input-field::placeholder {
+	color: var(--border-color);
+}
+
+.input-field:focus {
+	border-color: var(--button-bg);
+}
+
+.add-btn {
+	padding: 10px 20px;
+	background-color: #28a745;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size: 14px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+	background-color: #218838;
+}
+
+/** Feedback Message */
+.feedback {
+	font-size: 12px;
+	color: red;
+	visibility: hidden;
+	height: 14px;
+	line-height: 14px;
+	text-align: left;
+}
+
+.feedback.visible {
+	visibility: visible;
+}
+
+/* Dark Mode Toggle */
+.theme-toggle {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	cursor: pointer;
+}
+
+/* Hides the checkbox input */
+.theme-toggle input[type="checkbox"] {
+	display: none;
+}
+
+/* Dark Mode Slider */
+.theme-toggle .slider {
+	width: 40px;
+	height: 20px;
+	background: var(--border-color);
+	border-radius: 10px;
+	position: relative;
+	transition: background 0.3s ease;
+}
+
+.theme-toggle .slider::before {
+	content: "";
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	background: var(--text-color);
+	border-radius: 50%;
+	top: 2px;
+	left: 2px;
+	transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.theme-toggle input[type="checkbox"]:checked + .slider {
+	background: var(--button-bg);
+}
+
+.theme-toggle input[type="checkbox"]:checked + .slider::before {
+	transform: translateX(20px);
+}
+
+/* Dark Mode Icon */
+.theme-toggle .icon {
+	font-size: 20px;
+	opacity: 1;
+	transition: color 0.3s ease;
+}
+
+.theme-toggle input[type="checkbox"]:checked ~ .icon {
+	color: var(--button-bg);
+}

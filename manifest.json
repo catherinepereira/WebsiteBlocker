@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "WebsiteBlocker",
+  "version": "1.0",
+  "description": "Blocks specified websites. No more doom scrolling!",
+  "permissions": ["declarativeNetRequest", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/noscroll16.png",
+      "48": "icons/noscroll48.png",
+      "128": "icons/noscroll128.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["blocked/blocked.html", "blocked/blocked.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}  

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Blocker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <h1>Website Blocker</h1>
+    <div class="theme-toggle">
+        <input type="checkbox" id="darkModeToggle">
+        <label for="darkModeToggle" class="slider"></label>
+        <span class="icon" id="themeIcon" title="Current Mode">☀️</span>
+      </div>      
+    <button id="toggleBlocking" class="toggle-btn">Enable Blocking</button>
+    <div class="block-list">
+      <ul id="blockedList"></ul>
+    </div>
+    <div class="add-site">
+        <div class="input-container">
+          <input
+            type="text"
+            id="newSite"
+            placeholder="Enter website to block"
+            class="input-field"
+          />
+          <button id="addSite" class="add-btn">Add</button>
+        </div>
+        <div id="feedback" class="feedback"></div>
+    </div>      
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
