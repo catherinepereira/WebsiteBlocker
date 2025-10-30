@@ -123,7 +123,7 @@ function updateBlockedList() {
             li.textContent = site;
 
             const removeButton = document.createElement("button");
-            removeButton.textContent = "Remove";
+            removeButton.textContent = "Delete";
             removeButton.addEventListener("click", () => {
                 removeSiteFromBlockList(site);
             });
@@ -233,31 +233,6 @@ function showFeedback(message) {
     const feedback = document.getElementById("feedback");
     feedback.textContent = message;
     feedback.classList.add("visible");
-}
-
-
-/** =============== Dark Mode Code =============== */
-
-/** Loads saved theme */
-chrome.storage.local.get("darkModeEnabled", (result) => {
-    const isDarkMode = result.darkModeEnabled ?? false;
-    document.body.classList.toggle("dark-theme", isDarkMode);
-    darkModeToggle.checked = isDarkMode;
-    updateThemeIcon(isDarkMode);
-});
-
-/** Listens for changes to dark mode toggle */
-darkModeToggle.addEventListener("change", () => {
-    const isDarkMode = darkModeToggle.checked;
-    document.body.classList.toggle("dark-theme", isDarkMode);
-    updateThemeIcon(isDarkMode);
-    chrome.storage.local.set({ darkModeEnabled: isDarkMode });
-});
-
-/** Updates dark mode theme icon :) */
-function updateThemeIcon(isDarkMode) {
-    themeIcon.textContent = isDarkMode ? '🌙' : '☀️';
-    themeIcon.title = isDarkMode ? 'Dark Mode' : 'Light Mode';
 }
 
 initializeBlockingState();

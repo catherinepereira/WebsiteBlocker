@@ -1,21 +1,11 @@
 /* Light Theme Variables */
 :root {
-	--bg-color: #f4f4f9;
-	--text-color: #333;
-	--border-color: #ddd;
-	--button-bg: #007bff;
-	--button-hover: #0056b3;
-	--input-bg: #fff;
-}
-
-/* Dark Theme Variables */
-.dark-theme {
-	--bg-color: #1e1e2f;
+	--bg-color: #1a1a1d;
 	--text-color: #eee;
 	--border-color: #444;
 	--button-bg: #4e78ff;
 	--button-hover: #3a62cc;
-	--input-bg: #2a2a3d;
+	--input-bg: #29292b;
 }
 
 /* Body Style */
